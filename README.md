@@ -23,6 +23,7 @@ This is a containerization of Anish Athalye's [Neural-Style implementation](http
 The Neural Style run within the style pod is controlled by the parameters found in  `style.sh`. In `style.sh`, there are two sections to be modified before each run:
 
 #### NEURAL STYLE PARAMETERS:
+===
 There are four main parameters here:
 * Content: This is the name of your content image within `/images`, ie, `$(pwd)/images/chicago.jpg`
 * Style: This is the name of your style image  within `/images`, ie, `$(pwd)/images/wave.jpg`
@@ -32,6 +33,7 @@ There are four main parameters here:
 All other parameters are detailed [here](https://github.com/anishathalye/neural-style).
 
 #### EMAIL NOTIFICATION SETTINGS:
+===
 Here we adjust the settings sent to [`ocEmail.py`](https://github.com/RobGeada/openshift_style/blob/master/ocEmail.py), a Python script I wrote to send images via email programmatically. I use it here to automatically send the generated images from OpenShift to a specified address once Neural-Style has finished. If you'd rather `rsh` into the pod once it has finished to recover the generated image, then just comment out the line `python ocEmail.py ...` in style.sh.
 
 There are two parameters here:
