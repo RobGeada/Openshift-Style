@@ -2,16 +2,35 @@
 cd /home/neural-style
 start=$SECONDS
 
-#run neural_style
+#============================================================
+#=============NEURAL STYLE PARAMETERS========================
+#============================================================
+#These settings are to be played with; change the content 
+#and style images, the image width, iterations, etc.
+#You can find a full list of settings at 
+#https://github.com/anishathalye/neural-style
+
 python neural_style.py \
-	--content $(pwd)/images/chicago.jpg \
-	--styles $(pwd)/images/wave.jpg \
+	--content $(pwd)/images/{YOUR CONTENT IMAGE HERE}.jpg \
+	--styles $(pwd)/images/YOUR STYLE IMAGE HERE}.jpg \
 	--output $(pwd)/output.jpg \
-	--width 50 \
-	--iterations 50 \
-	--style-layer-weight-exp 2.0
+	--width 500 \
+	--iterations 500 \
+	--style-layer-weight-exp 1.0
+#============================================================
 
 duration=$(( SECONDS - start ))
-python ocEmail.py --dest rob@geada.net --tag chicago --timer $duration
+
+#============================================================
+#=============EMAIL NOTIFICATION SETTINGS====================
+#============================================================
+#fill in the following parameters as follows:
+#	-dest: an email address to send the results to
+#	-tag:  a name by which to identify this result
+# ie, --dest email@email.com --tag ChicagoWave
+
+python ocEmail.py --dest {YOUR EMAIL HERE} --tag {YOUR TAG HERE} --timer $duration
+#============================================================
+
 echo "email sent!"
 sleep 1000000000
