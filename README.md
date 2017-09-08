@@ -14,8 +14,8 @@ This is a containerization of Anish Athalye's [Neural-Style implementation](http
 ## Usage
 1. Place your desired style and content images into `/images`, if necessary
 2. Modify style.sh as necessary (see "Using style.sh" below)
-3. Run `make build tag={YOUR TAG HERE}`. The tag will serve as the docker tag and OpenShift pod name for this run, so choose something descriptive. If the rgeada/style:base image has not yet been pulled to your system, this command will pull it automatically, which may take a while.
-4. Wait for the pod to deploy on OpenShift. The first time you deploy a style pod to your cluster may take a little while; the image is pretty large and takes a while to deploy. However, once a style pod has been successfully deployed to OpenShift, subsequent pods should deploy much, much faster.
+3. Run `make build tag={YOUR TAG HERE}`. The tag will serve as the Docker tag and OpenShift pod name for this run, so choose something descriptive. If the rgeada/style:base image has not yet been pulled to your system, this command will pull it automatically, which may take a while.
+4. Wait for the pod to deploy on OpenShift. The first time you deploy a style pod to your cluster may take a little while; the image is pretty large and takes a while to deploy. It's possible that the deployment pod will auto-terminate if it doesn't deploy within ten minutes, if this happens, simply redeploy via the OpenShift web interface. Once a style pod has been successfully deployed to OpenShift, however, subsequent pods should deploy much, much faster.
 5. Wait for Neural-Style to finish! You can check on its progress in the style pod logs. Once it has finished, you will receive an email containing the generated image.
 6. Run `make clean tag={YOUR TAG HERE}`. The tag here should be the same tag used when building; this will clear the pods from OpenShift as well as remove the style:{tag} image from your local system. The style:base image will remain until you decide to delete it; I wouldn't make you re-pull it every time!
 
