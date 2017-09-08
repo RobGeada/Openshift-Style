@@ -26,7 +26,7 @@ The Neural Style run within the style pod is controlled by the parameters found 
 There are four main parameters here:
 * Content: This is the name of your content image within `/images`, ie, `$(pwd)/images/chicago.jpg`
 * Style: This is the name of your style image  within `/images`, ie, `$(pwd)/images/wave.jpg`
-* Width: This is the output width of your generated image. The height will be automatically set according to aspect ratio of the content image.
+* Width: This is the output width of your generated image. The height will be automatically set according to the aspect ratio of the content image
 * Iterations: The number of iterations to train the net over
 
 All other parameters are detailed [here](https://github.com/anishathalye/neural-style).
@@ -35,5 +35,5 @@ All other parameters are detailed [here](https://github.com/anishathalye/neural-
 Here we adjust the settings sent to [`ocEmail.py`](https://github.com/RobGeada/openshift_style/blob/master/ocEmail.py), a Python script I wrote to send images via email programmatically. I use it here to automatically send the generated images from OpenShift to a specified address once Neural-Style has finished. If you'd rather `rsh` into the pod once it has finished to recover the generated image, then just comment out the line `python ocEmail.py ...` in style.sh.
 
 There are two parameters here:
-* Dest: This is the email address to send the generated image to.
+* Dest: This is the email address to send the generated image to
 * Tag: This identifies the image being sent, so it helps if it matches the tag used in your `build` command
