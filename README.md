@@ -1,4 +1,4 @@
-# openshift_style
+# Openshift-Style
 
 This is a containerization of Anish Athalye's [Neural-Style implementation](https://github.com/anishathalye/neural-style) to allow for easy deployment to OpenShift clusters. See this [slide deck](https://docs.google.com/a/redhat.com/presentation/d/1xvOtt2dJET_0PI4oYtB6AjsAIjrzZ9zLdQyAfwuTNlU/edit?usp=sharing) for a high-level overview.
 
