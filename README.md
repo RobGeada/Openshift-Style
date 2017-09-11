@@ -8,7 +8,7 @@ This is a containerization of Anish Athalye's [Neural-Style implementation](http
 
 ## Setup
 1. Clone this repo into any directory
-2. Make sure the Docker daemon is running
+2. Make sure the Docker daemon is running and you are logged into a Docker account for which you have push permissions
 3. Make sure you are logged in to your OpenShift cluster via `oc login`
 
 ## Usage
